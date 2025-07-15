@@ -12,6 +12,7 @@ require (
 	github.com/cybriq/gotiny v0.0.5
 	github.com/davecgh/go-xdr v0.0.0-20161123171359-e6a2ba005892
 	github.com/deneonet/benc v1.0.2
+	github.com/fxamacker/cbor/v2 v2.9.0
 	github.com/glycerine/go-capnproto v0.0.0-20190118050403-2d07de3aa7fc
 	github.com/gogo/protobuf v1.3.2
 	github.com/google/flatbuffers v23.1.21+incompatible
@@ -37,7 +38,10 @@ require (
 	wellquite.org/bebop v0.0.0-20231109192402-a92af83691ec
 )
 
-require github.com/mus-format/common-go v0.0.0-20240427160332-fda7f59c1da2 // indirect
+require (
+	github.com/mus-format/common-go v0.0.0-20240427160332-fda7f59c1da2 // indirect
+	github.com/x448/float16 v0.8.4 // indirect
+)
 
 require (
 	github.com/DataDog/zstd v1.5.2 // indirect

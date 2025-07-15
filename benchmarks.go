@@ -1,6 +1,8 @@
 package main
 
 import (
+	"cbor"
+
 	"github.com/alecthomas/go_serialization_benchmarks/goserbench"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/avro"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/baseline"
@@ -122,6 +124,27 @@ type BenchmarkCase struct {
 
 var benchmarkCases = []BenchmarkCase{
 	{
+		Name: "cbor",
+		URL:  "https://github.com/fxamacker/cbor",
+		New:  cbor.NewCBORSerializer,
+
+		TimeSupport: TSFullTzOffset,
+		APIKind:     AKReflect,
+	}, {
+		// 	Name: "cbor-precast",
+		// 	URL:  "https://github.com/fxamacker/cbor",
+		// 	New:  cbor.NewCBORPrecastSerializer,
+
+		// 	TimeSupport: TSFullTzOffset,
+		// 	APIKind:     AKReflect,
+		// }, {
+		// 	Name: "cbor-toarray",
+		// 	URL:  "https://github.com/fxamacker/cbor",
+		// 	New:  cbor.NewCBORToArraySerializer,
+
+		// 	TimeSupport: TSFullTzOffset,
+		// 	APIKind:     AKReflect,
+		// }, {
 		Name: "gotiny",
 		URL:  "github.com/niubaoshu/gotiny",
 		New:  gotiny.NewGotinySerializer,
